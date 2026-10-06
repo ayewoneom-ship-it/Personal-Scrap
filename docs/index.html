@@ -31,6 +31,7 @@
   }
   h1, h2 { font-family: "Fraunces", Georgia, serif; font-weight: 700; line-height: 1.1; margin: 0; }
   h2 { font-size: clamp(1.7rem, 5vw, 2.4rem); text-align: center; margin-bottom: .4rem; }
+  h2 + .counter, h2 + .timeline { margin-top: 2rem; }
   .sub { text-align: center; color: var(--muted); margin: 0 auto 2rem; max-width: 34rem; }
   section { padding: 4.5rem 16px; max-width: 920px; margin: 0 auto; position: relative; z-index: 1; }
 
@@ -170,7 +171,6 @@
 
 <section id="counter" class="reveal">
   <h2>We've been us for</h2>
-  <p class="sub">and it's still going up, right now, as you read this</p>
   <div class="counter">
     <div class="tick"><b id="d">30</b><span>days</span></div>
     <div class="tick"><b id="h">0</b><span>hours</span></div>
@@ -182,7 +182,6 @@
 
 <section class="reveal">
   <h2>Our story so far</h2>
-  <p class="sub">friends first, which I think is the best way</p>
   <ol class="timeline">
 <li class="moment"><span class="when">This summer</span><p>We went from fwb to friends to talking stage LOL. For like a whole month.</p></li>
 <li class="moment"><span class="when">Sept 6</span><p>You came up to Michigan and we made it official 💛</p></li>
@@ -242,7 +241,7 @@
 </section>
 
 <footer>
-  made with <code>python build.py</code> and way too much 🖤 by Abby
+  made by your girlfriend abby and her python class
 </footer>
 
 <script>
