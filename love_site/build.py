@@ -30,10 +30,10 @@ TOGETHER_SINCE = date(2026, 9, 6)
 # where each of you is - used to calculate how many miles apart you are.
 # Look up your city's latitude/longitude on Google Maps (right-click -> the numbers).
 MY_PLACE = {"label": "Michigan", "lat": 42.2808, "lon": -83.7430}   # default: Ann Arbor
-HIS_PLACE = {"label": "Purdue", "lat": 39.7737, "lon": -86.1751}    # West Lafayette, IN
+HIS_PLACE = {"label": "Purdue", "lat": 39.7737, "lon": -86.1751}    # Indianapolis, IN
 
 # next time you'll see each other (YYYY, M, D) - or set to None to hide the countdown
-NEXT_VISIT = date(2026.10.09)         # e.g. date(2026, 10, 24)
+NEXT_VISIT = date(2026, 10, 9)         # e.g. date(2026, 10, 24)
 
 # our story, in order. (when, what)
 TIMELINE = [
