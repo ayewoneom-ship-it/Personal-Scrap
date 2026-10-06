@@ -22,37 +22,35 @@ from pathlib import Path
 
 # ───────────────────────────── EDIT ME ─────────────────────────────
 
-HIS_NAME = "you"          # his name, e.g. "Jake"  (shows up all over the site)
-MY_NAME = "me"            # your name, signs the bottom of the page
+HIS_NAME = "Vin"          # his name, e.g. "Jake"  (shows up all over the site)
+MY_NAME = "Abby"            # your name, signs the bottom of the page
 
-# the day you two made it official (when he came up to Michigan)
 TOGETHER_SINCE = date(2026, 9, 6)
 
 # where each of you is - used to calculate how many miles apart you are.
 # Look up your city's latitude/longitude on Google Maps (right-click -> the numbers).
 MY_PLACE = {"label": "Michigan", "lat": 42.2808, "lon": -83.7430}   # default: Ann Arbor
-HIS_PLACE = {"label": "Purdue", "lat": 40.4237, "lon": -86.9212}    # West Lafayette, IN
+HIS_PLACE = {"label": "Purdue", "lat": 39.7737, "lon": -86.1751}    # West Lafayette, IN
 
 # next time you'll see each other (YYYY, M, D) - or set to None to hide the countdown
-NEXT_VISIT = None         # e.g. date(2026, 10, 24)
+NEXT_VISIT = date(2026.10.09)         # e.g. date(2026, 10, 24)
 
 # our story, in order. (when, what)
 TIMELINE = [
-    ("High school", "We were just friends. Little did we know 👀"),
-    ("This summer", "We started talking again... and kept talking. For like a whole month."),
+    ("This summer", "We went from fwb to friends to talking stage LOL. For like a whole month."),
     ("Sept 6", "You came up to Michigan and we made it official 💛"),
     ("Oct 6", "One whole month of us. Long distance and you're still my favorite person."),
-    ("Next", "Many more drives between Michigan and Indiana, many more FaceTimes that go way too late."),
+    ("Next", "Many more drives between Michigan and Indianapolis, many more FaceTimes that go way too late."),
 ]
 
 # tap-to-flip cards. Front = a little teaser, back = the real thing. Make these yours!
 REASONS = [
-    ("🌙", "Late nights", "You stay up on FaceTime with me even when you have an 8am."),
-    ("😂", "Your humor", "You make me laugh harder than anyone, even through a phone screen."),
-    ("🏫", "Old friends", "You knew me way before all this, and you still like me. Brave."),
-    ("🚗", "You showed up", "You drove all the way up to Michigan. Best trip ever."),
-    ("🚂", "Boiler Up", "Even though you go to Purdue. I'll allow it. (I'm kidding, mostly.)"),
-    ("🫶", "Just you", "The way you make 4 hours of distance feel like nothing."),
+    ("🌙", "Late nights", "You stay up on FaceTime with me even when you have an 8:30."),
+    ("☺️", "You're caring", "You're the sweetest boyfriend and I love talking to you"),
+    ("🤭", "My corner", "You're at my corner and I'm at yours and always will be"),
+    ("🚗", "You showed up", "You drove all the way up to Michigan and gave me the best day."),
+    ("💋", "Good Kisser", "I'm still impressed by our first kiss when you nearly fell LOL"),
+    ("🫶", "Just you", "I like all of you hehe"),
 ]
 
 # the big question at the end
