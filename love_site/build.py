@@ -25,7 +25,7 @@ from pathlib import Path
 HIS_NAME = "Vin"          # his name, e.g. "Jake"  (shows up all over the site)
 MY_NAME = "Abby"            # your name, signs the bottom of the page
 
-TOGETHER_SINCE = date(2026, 9, 6)
+TOGETHER_SINCE = datetime(2026, 9, 6, 23, 59)   # Sept 6, 11:59pm  (year, month, day, hour, minute)
 
 # where each of you is - used to calculate how many miles apart you are.
 # Look up your city's latitude/longitude on Google Maps (right-click -> the numbers).
@@ -98,7 +98,7 @@ def render_reasons():
 
 def build():
     miles = miles_between(MY_PLACE, HIS_PLACE)
-    days = (date.today() - TOGETHER_SINCE).days
+    days = (datetime.now() - TOGETHER_SINCE).days
     display_name = HIS_NAME if HIS_NAME != "you" else "my favorite boilermaker"
 
     replacements = {
