@@ -1,0 +1,350 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Happy One Month 💛</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,700;1,9..144,400&family=Nunito:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #fdf8ef;
+    --ink: #1c1917;
+    --muted: #6b625a;
+    --gold: #cfb991;      /* Purdue old gold */
+    --gold-deep: #9d7b3f;
+    --pink: #f4a7b9;
+    --pink-deep: #e0607e;
+    --card: #ffffff;
+    --line: #eadfcd;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--cream);
+    color: var(--ink);
+    font-family: "Nunito", system-ui, sans-serif;
+    line-height: 1.55;
+    overflow-x: hidden;
+  }
+  h1, h2 { font-family: "Fraunces", Georgia, serif; font-weight: 700; line-height: 1.1; margin: 0; }
+  h2 { font-size: clamp(1.7rem, 5vw, 2.4rem); text-align: center; margin-bottom: .4rem; }
+  .sub { text-align: center; color: var(--muted); margin: 0 auto 2rem; max-width: 34rem; }
+  section { padding: 4.5rem 16px; max-width: 920px; margin: 0 auto; position: relative; z-index: 1; }
+
+  /* floating hearts in the background */
+  #hearts { position: fixed; inset: 0; pointer-events: none; z-index: 0; overflow: hidden; }
+  .float-heart {
+    position: absolute; bottom: -40px; opacity: .55;
+    animation: rise linear forwards;
+  }
+  @keyframes rise {
+    to { transform: translateY(-115vh) rotate(25deg); opacity: 0; }
+  }
+
+  /* ── hero ── */
+  .hero {
+    min-height: 100svh; display: flex; flex-direction: column;
+    align-items: center; justify-content: center; text-align: center; gap: 1.2rem;
+  }
+  .eyebrow {
+    font-weight: 800; letter-spacing: .18em; text-transform: uppercase;
+    font-size: .8rem; color: var(--gold-deep);
+  }
+  .hero h1 { font-size: clamp(2.8rem, 11vw, 6rem); }
+  .hero h1 em { color: var(--pink-deep); font-style: italic; font-weight: 400; }
+  .hero .to { font-size: 1.15rem; color: var(--muted); margin: 0; }
+  .big-heart {
+    font-size: 4rem; cursor: pointer; user-select: none; background: none; border: 0;
+    animation: beat 1.3s ease-in-out infinite;
+  }
+  @keyframes beat {
+    0%, 100% { transform: scale(1); }
+    15% { transform: scale(1.18); }
+    30% { transform: scale(1); }
+    45% { transform: scale(1.12); }
+  }
+  .hint { font-size: .85rem; color: var(--muted); }
+  .scroll-cue { margin-top: 2rem; color: var(--gold-deep); text-decoration: none; font-weight: 800; }
+
+  /* ── counter ── */
+  .counter { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; max-width: 620px; margin: 0 auto; }
+  .tick {
+    background: var(--ink); color: var(--cream); border-radius: 18px;
+    padding: 1.1rem .4rem; text-align: center;
+    box-shadow: 0 6px 0 var(--gold);
+  }
+  .tick b { display: block; font-family: "Fraunces", serif; font-size: clamp(1.8rem, 7vw, 3rem); color: var(--gold); font-variant-numeric: tabular-nums; }
+  .tick span { font-size: .8rem; letter-spacing: .1em; text-transform: uppercase; }
+  .counter-note { text-align: center; margin-top: 1.6rem; color: var(--muted); }
+
+  /* ── timeline ── */
+  .timeline { list-style: none; padding: 0; margin: 0 auto; max-width: 560px; position: relative; }
+  .timeline::before {
+    content: ""; position: absolute; left: 11px; top: 6px; bottom: 6px;
+    border-left: 3px dotted var(--gold);
+  }
+  .moment { position: relative; padding: 0 0 1.8rem 44px; }
+  .moment::before {
+    content: "♥"; position: absolute; left: 0; top: -2px;
+    width: 26px; height: 26px; border-radius: 50%;
+    display: grid; place-items: center; font-size: .8rem;
+    background: var(--pink); color: #fff;
+  }
+  .moment .when { font-weight: 800; color: var(--gold-deep); text-transform: uppercase; font-size: .8rem; letter-spacing: .12em; }
+  .moment p { margin: .2rem 0 0; font-size: 1.08rem; }
+
+  /* ── distance ── */
+  .distance svg { width: 100%; max-width: 640px; display: block; margin: 0 auto; overflow: visible; }
+  .distance .miles { text-align: center; font-family: "Fraunces", serif; font-size: clamp(1.4rem, 5vw, 2rem); margin-top: .8rem; }
+  .distance .miles b { color: var(--pink-deep); }
+  .visit {
+    margin: 2rem auto 0; max-width: 460px; text-align: center;
+    background: var(--card); border: 2px dashed var(--gold); border-radius: 20px; padding: 1.2rem;
+  }
+  .visit b { font-family: "Fraunces", serif; font-size: 1.6rem; color: var(--gold-deep); }
+
+  /* ── reasons cards ── */
+  .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .card { perspective: 900px; border: 0; padding: 0; background: none; height: 170px; cursor: pointer; font: inherit; color: inherit; }
+  .card-inner {
+    position: relative; display: block; width: 100%; height: 100%;
+    transition: transform .6s cubic-bezier(.3,1.4,.5,1); transform-style: preserve-3d;
+  }
+  .card.flipped .card-inner { transform: rotateY(180deg); }
+  .face {
+    position: absolute; inset: 0; border-radius: 20px; padding: 1rem;
+    display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;
+    backface-visibility: hidden; -webkit-backface-visibility: hidden;
+  }
+  .front { background: var(--card); border: 2px solid var(--line); font-weight: 800; font-size: 1.1rem; gap: .4rem; }
+  .front .emoji { font-size: 2.2rem; }
+  .back { background: var(--pink); color: var(--ink); transform: rotateY(180deg); font-size: 1rem; font-weight: 600; }
+  .card:hover .front { border-color: var(--gold); }
+
+  /* ── the question ── */
+  .question { text-align: center; min-height: 70vh; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+  .question h2 { max-width: 30rem; }
+  .buttons { display: flex; gap: 16px; justify-content: center; margin-top: 2rem; position: relative; min-height: 64px; width: 100%; }
+  .btn {
+    font: 800 1.15rem "Nunito", sans-serif; border: 0; border-radius: 999px;
+    padding: .9rem 2.2rem; cursor: pointer; transition: transform .15s;
+  }
+  .btn:active { transform: scale(.96); }
+  .yes { background: var(--ink); color: var(--gold); box-shadow: 0 5px 0 var(--gold-deep); }
+  .no { background: var(--line); color: var(--muted); transition: left .25s, top .25s; }
+  .no.running { position: fixed; z-index: 5; }
+  .answer { font-family: "Fraunces", serif; font-size: clamp(1.5rem, 5vw, 2.2rem); color: var(--pink-deep); margin-top: 1.6rem; min-height: 3rem; }
+
+  footer { text-align: center; padding: 2rem 16px 3rem; color: var(--muted); font-size: .9rem; position: relative; z-index: 1; }
+  footer code { background: var(--line); padding: .15rem .45rem; border-radius: 6px; }
+
+  .reveal { opacity: 0; transform: translateY(24px); transition: opacity .8s, transform .8s; }
+  .reveal.in { opacity: 1; transform: none; }
+
+  @media (max-width: 520px) {
+    .counter { grid-template-columns: repeat(2, 1fr); }
+    .cards { grid-template-columns: 1fr 1fr; }
+    .card { height: 190px; }
+    .back { font-size: .9rem; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .big-heart, .float-heart { animation: none; }
+    .reveal { opacity: 1; transform: none; }
+  }
+</style>
+</head>
+<body>
+<div id="hearts" aria-hidden="true"></div>
+
+<header class="hero">
+  <div class="eyebrow">September 6 → October 6</div>
+  <h1>Happy <em>one month</em></h1>
+  <p class="to">to my favorite boilermaker 🖤💛</p>
+  <button class="big-heart" id="bigHeart" aria-label="tap for hearts">💛</button>
+  <div class="hint">(tap the heart)</div>
+  <a class="scroll-cue" href="#counter">scroll ↓</a>
+</header>
+
+<section id="counter" class="reveal">
+  <h2>We've been us for</h2>
+  <p class="sub">and it's still going up, right now, as you read this</p>
+  <div class="counter">
+    <div class="tick"><b id="d">30</b><span>days</span></div>
+    <div class="tick"><b id="h">0</b><span>hours</span></div>
+    <div class="tick"><b id="m">0</b><span>minutes</span></div>
+    <div class="tick"><b id="s">0</b><span>seconds</span></div>
+  </div>
+  <p class="counter-note">(that's <b id="beats">a lot of</b> heartbeats, give or take 💓)</p>
+</section>
+
+<section class="reveal">
+  <h2>Our story so far</h2>
+  <p class="sub">friends first, which I think is the best way</p>
+  <ol class="timeline">
+<li class="moment"><span class="when">High school</span><p>We were just friends. Little did we know 👀</p></li>
+<li class="moment"><span class="when">This summer</span><p>We started talking again... and kept talking. For like a whole month.</p></li>
+<li class="moment"><span class="when">Sept 6</span><p>You came up to Michigan and we made it official 💛</p></li>
+<li class="moment"><span class="when">Oct 6</span><p>One whole month of us. Long distance and you&#x27;re still my favorite person.</p></li>
+<li class="moment"><span class="when">Next</span><p>Many more drives between Michigan and Indiana, many more FaceTimes that go way too late.</p></li>
+  </ol>
+</section>
+
+<section class="distance reveal">
+  <h2>Long distance, short story</h2>
+  <p class="sub">Michigan → Purdue</p>
+  <svg viewBox="0 0 600 200" role="img" aria-label="A heart traveling between Michigan and Purdue">
+    <path id="route" d="M 70 60 C 220 -10, 380 220, 530 140" fill="none" stroke="#cfb991" stroke-width="4" stroke-dasharray="2 12" stroke-linecap="round"/>
+    <g>
+      <circle cx="70" cy="60" r="14" fill="#1c1917"/>
+      <text x="70" y="65" text-anchor="middle" font-size="14">🏠</text>
+      <text x="70" y="100" text-anchor="middle" font-family="Nunito, sans-serif" font-weight="800" font-size="16" fill="#1c1917">Michigan</text>
+    </g>
+    <g>
+      <circle cx="530" cy="140" r="14" fill="#1c1917"/>
+      <text x="530" y="145" text-anchor="middle" font-size="14">🚂</text>
+      <text x="530" y="182" text-anchor="middle" font-family="Nunito, sans-serif" font-weight="800" font-size="16" fill="#1c1917">Purdue</text>
+    </g>
+    <text font-size="26" text-anchor="middle" dominant-baseline="middle">💛
+      <animateMotion dur="4s" repeatCount="indefinite" keyPoints="0;1;0" keyTimes="0;.5;1" calcMode="linear">
+        <mpath href="#route"/>
+      </animateMotion>
+    </text>
+  </svg>
+  <p class="miles">about <b>209 miles</b> apart, and it still feels like you're right here</p>
+  <div class="visit" id="visit" hidden>
+    <div>until I see you again</div>
+    <b id="visitCount"></b>
+  </div>
+</section>
+
+<section class="reveal">
+  <h2>Some things I like about you</h2>
+  <p class="sub">tap a card to flip it (this is not the full list, the full list wouldn't fit)</p>
+  <div class="cards">
+<button class="card" type="button" aria-label="flip card"><span class="card-inner"><span class="face front"><span class="emoji">🌙</span>Late nights</span><span class="face back">You stay up on FaceTime with me even when you have an 8am.</span></span></button>
+<button class="card" type="button" aria-label="flip card"><span class="card-inner"><span class="face front"><span class="emoji">😂</span>Your humor</span><span class="face back">You make me laugh harder than anyone, even through a phone screen.</span></span></button>
+<button class="card" type="button" aria-label="flip card"><span class="card-inner"><span class="face front"><span class="emoji">🏫</span>Old friends</span><span class="face back">You knew me way before all this, and you still like me. Brave.</span></span></button>
+<button class="card" type="button" aria-label="flip card"><span class="card-inner"><span class="face front"><span class="emoji">🚗</span>You showed up</span><span class="face back">You drove all the way up to Michigan. Best trip ever.</span></span></button>
+<button class="card" type="button" aria-label="flip card"><span class="card-inner"><span class="face front"><span class="emoji">🚂</span>Boiler Up</span><span class="face back">Even though you go to Purdue. I&#x27;ll allow it. (I&#x27;m kidding, mostly.)</span></span></button>
+<button class="card" type="button" aria-label="flip card"><span class="card-inner"><span class="face front"><span class="emoji">🫶</span>Just you</span><span class="face back">The way you make 4 hours of distance feel like nothing.</span></span></button>
+  </div>
+</section>
+
+<section class="question reveal">
+  <h2>Will you be my boyfriend for another month? (and the one after that...)</h2>
+  <div class="buttons">
+    <button class="btn yes" id="yes">Yes 💛</button>
+    <button class="btn no" id="no">No</button>
+  </div>
+  <div class="answer" id="answer" aria-live="polite"></div>
+</section>
+
+<footer>
+  made with <code>python build.py</code> and way too much 🖤 by me
+</footer>
+
+<script>
+  const SINCE = new Date("2026-09-06" + "T00:00:00");
+  const NEXT_VISIT = null;
+  const YES_MESSAGE = "YAY!! Happy one month, I really really like you \ud83d\udc9b\ud83d\udda4";
+
+  // ── live counter ──
+  const $ = (id) => document.getElementById(id);
+  function tick() {
+    let ms = Date.now() - SINCE.getTime();
+    const total = Math.max(0, Math.floor(ms / 1000));
+    $("d").textContent = Math.floor(total / 86400);
+    $("h").textContent = Math.floor(total / 3600) % 24;
+    $("m").textContent = Math.floor(total / 60) % 60;
+    $("s").textContent = total % 60;
+    $("beats").textContent = Math.round(total * 75 / 60).toLocaleString();  // ~75 bpm
+
+    if (NEXT_VISIT) {
+      const left = new Date(NEXT_VISIT + "T00:00:00") - Date.now();
+      $("visit").hidden = false;
+      if (left <= 0) {
+        $("visitCount").textContent = "it's today!! 🥹";
+      } else {
+        const d = Math.floor(left / 86400000), h = Math.floor(left / 3600000) % 24;
+        $("visitCount").textContent = `${d} days, ${h} hours`;
+      }
+    }
+  }
+  tick();
+  setInterval(tick, 1000);
+
+  // ── hearts ──
+  const heartBox = $("hearts");
+  const HEARTS = ["💛", "🖤", "🤍", "💗", "💛"];
+  function spawnHeart(x, size) {
+    const el = document.createElement("span");
+    el.className = "float-heart";
+    el.textContent = HEARTS[Math.floor(Math.random() * HEARTS.length)];
+    el.style.left = (x ?? Math.random() * 100) + "vw";
+    el.style.fontSize = (size ?? 14 + Math.random() * 22) + "px";
+    el.style.animationDuration = 7 + Math.random() * 8 + "s";
+    heartBox.appendChild(el);
+    el.addEventListener("animationend", () => el.remove());
+  }
+  const calm = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (!calm) setInterval(() => spawnHeart(), 900);
+
+  function burst(n = 30) {
+    for (let i = 0; i < n; i++) {
+      setTimeout(() => {
+        const el = document.createElement("span");
+        el.className = "float-heart";
+        el.textContent = HEARTS[i % HEARTS.length];
+        el.style.left = Math.random() * 100 + "vw";
+        el.style.fontSize = 20 + Math.random() * 30 + "px";
+        el.style.animationDuration = 3 + Math.random() * 3 + "s";
+        heartBox.appendChild(el);
+        el.addEventListener("animationend", () => el.remove());
+      }, i * 40);
+    }
+  }
+  $("bigHeart").addEventListener("click", () => burst(18));
+
+  // ── flip cards ──
+  document.querySelectorAll(".card").forEach((card) =>
+    card.addEventListener("click", () => card.classList.toggle("flipped"))
+  );
+
+  // ── the question: "no" is not really an option ──
+  const no = $("no");
+  const noLines = ["no", "are you sure?", "really??", "think again", "nice try", "😤", "just press yes"];
+  let dodges = 0;
+  function runAway(e) {
+    e.preventDefault();
+    dodges++;
+    no.textContent = noLines[Math.min(dodges, noLines.length - 1)];
+    no.classList.add("running");
+    const pad = 20;
+    const x = pad + Math.random() * (innerWidth - no.offsetWidth - pad * 2);
+    const y = pad + Math.random() * (innerHeight - no.offsetHeight - pad * 2);
+    no.style.left = x + "px";
+    no.style.top = y + "px";
+    const yes = $("yes");
+    yes.style.transform = `scale(${Math.min(1 + dodges * 0.12, 1.8)})`;
+  }
+  no.addEventListener("mouseenter", runAway);
+  no.addEventListener("touchstart", runAway, { passive: false });
+  no.addEventListener("click", runAway);
+
+  $("yes").addEventListener("click", () => {
+    $("answer").textContent = YES_MESSAGE;
+    no.remove();
+    burst(60);
+  });
+
+  // ── fade sections in on scroll ──
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } });
+  }, { threshold: 0.15 });
+  document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
+</script>
+</body>
+</html>
