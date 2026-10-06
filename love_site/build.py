@@ -15,7 +15,7 @@ import html
 import json
 import math
 import webbrowser
-from datetime import date
+from datetime import date, datetime
 from functools import partial
 from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
@@ -33,7 +33,7 @@ MY_PLACE = {"label": "Michigan", "lat": 42.2808, "lon": -83.7430}   # default: A
 HIS_PLACE = {"label": "Purdue", "lat": 39.7737, "lon": -86.1751}    # Indianapolis, IN
 
 # next time you'll see each other (YYYY, M, D) - or set to None to hide the countdown
-NEXT_VISIT = date(2026, 10, 9)         # e.g. date(2026, 10, 24)
+NEXT_VISIT = datetime(2026, 10, 9, 19, 0)   # Friday Oct 9, 7pm  (year, month, day, hour, minute)
 
 # our story, in order. (when, what)
 TIMELINE = [

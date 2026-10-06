@@ -253,13 +253,14 @@
     $("beats").textContent = Math.round(total * 75 / 60).toLocaleString();  // ~75 bpm
 
     if (NEXT_VISIT) {
-      const left = new Date(NEXT_VISIT + "T00:00:00") - Date.now();
+      const visitAt = new Date(NEXT_VISIT.includes("T") ? NEXT_VISIT : NEXT_VISIT + "T00:00:00");
+      const left = visitAt - Date.now();
       $("visit").hidden = false;
       if (left <= 0) {
-        $("visitCount").textContent = "it's today!! 🥹";
+        $("visitCount").textContent = "right now!! 🥹";
       } else {
-        const d = Math.floor(left / 86400000), h = Math.floor(left / 3600000) % 24;
-        $("visitCount").textContent = `${d} days, ${h} hours`;
+        const d = Math.floor(left / 86400000), h = Math.floor(left / 3600000) % 24, m = Math.floor(left / 60000) % 60;
+        $("visitCount").textContent = `${d} days, ${h} hours, ${m} minutes`;
       }
     }
   }
